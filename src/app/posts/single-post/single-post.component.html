@@ -1,0 +1,42 @@
+<div class="container" nz-row nzJustify="center">
+    <nz-card [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
+        <div>
+            <h1>{{post.title}}</h1>
+        </div>
+        <nz-card-meta nzTitle="{{user.name}}" nzDescription="{{user.username}}" [nzAvatar]="avatarTemplate">
+        </nz-card-meta>
+    </nz-card>
+    <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+    </ng-template>
+    <ng-template #coverTemplate>
+        <img alt="example" src="https://cdn-images-1.medium.com/max/400/1*paF1sORslyG6gs2nYiCspg.jpeg" />
+    </ng-template>
+    <ng-template #actionSetting>
+        <div class="body">
+            {{post.body}}
+        </div>
+    </ng-template>
+
+</div>
+<h1>Comments</h1>
+<div nzJustify="center" nz-row *ngFor="let item of comments">
+    <nz-comment nzAuthor="{{item.name}}" [nzDatetime]="time">
+        <nz-avatar nz-comment-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+        </nz-avatar>
+        <nz-comment-content>
+            <p>
+                {{item.body}}
+            </p>
+        </nz-comment-content>
+        <nz-comment-action>
+            <i nz-tooltip nzTitle="Like" nz-icon nzType="like" (click)="like()"></i>
+            <span class="count like">1</span>
+        </nz-comment-action>
+        <nz-comment-action>
+            <i nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike" (click)="dislike()"></i>
+            <span class="count dislike">2</span>
+        </nz-comment-action>
+        <nz-comment-action>Reply to</nz-comment-action>
+    </nz-comment>
+</div>

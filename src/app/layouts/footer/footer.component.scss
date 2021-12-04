@@ -1,0 +1,17 @@
+@import "../../../assets/styling/app.color.scss";
+
+nz-footer {
+  background-color: $primary-color-three;
+  color: $footer-color;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+h1 {
+  color: $primary-color-two;
+
+  margin-top: -14px;
+}

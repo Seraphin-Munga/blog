@@ -1,0 +1,32 @@
+<div nz-row nzJustify="center">
+    <nz-table #outBordered [nzData]="posts">
+        <thead>
+            <tr>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div nz-row [nzGutter]="16">
+                        <div *ngFor="let data of outBordered.data" nz-col class="gutter-row" [nzSpan]="6">
+                            <div class="inner-box">
+                                <nz-card (click)="post(data.id)" nzHoverable style="width:240px"
+                                    [nzCover]="coverTemplate">
+                                    <nz-card-meta nzTitle="{{data.title}}" nzDescription="{{data.body}}">
+                                    </nz-card-meta>
+                                </nz-card>
+                                <ng-template #coverTemplate>
+                                    <img alt="example"
+                                        src="https://cdn-images-1.medium.com/max/400/1*paF1sORslyG6gs2nYiCspg.jpeg" />
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

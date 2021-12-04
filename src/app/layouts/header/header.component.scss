@@ -1,0 +1,15 @@
+@import "../../../assets/styling/app.color.scss";
+
+nz-header {
+  width: 100%;
+  height: 70px;
+  background: $primary-color-three;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+h1 {
+  color: $primary-color-two;
+  cursor: pointer;
+}
